@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct PPomoTimer1App: App {
+    
+    @StateObject var tm : TimerModel = TimerModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environmentObject(tm)
         }
     }
 }
