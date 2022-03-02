@@ -22,6 +22,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                Color("BackgroundColor").ignoresSafeArea(.all)
                 if tm.timerStyle == nil {
                     NoTimerView()
                 } else {

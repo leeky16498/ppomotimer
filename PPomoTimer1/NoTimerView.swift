@@ -17,10 +17,12 @@ struct NoTimerView: View {
             Text("Add your timer now!")
                 .font(.title.bold())
                 .padding(.bottom, 8)
+                .foregroundColor(.white)
             Text("Hey! 😀 Welcome to PPO.MO timer.\n Press ' + ' button and start your journey!")
                 .font(.body)
                 .multilineTextAlignment(.center)
                 .padding()
+                .foregroundColor(.white)
         }
         .padding()
     }

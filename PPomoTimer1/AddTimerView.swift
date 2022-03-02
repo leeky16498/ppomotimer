@@ -21,6 +21,10 @@ struct AddTimerView: View {
     @State var isAuto : Bool = false
     @State var isTimePicker : Bool = false
     
+    init(){
+        UITableView.appearance().backgroundColor = .clear
+    }
+    
     var body: some View {
             Form {
                 Section {
@@ -30,7 +34,7 @@ struct AddTimerView: View {
                             .background(.green)
                             .foregroundColor(.white)
                             .cornerRadius(5)
-                        Text("Timer Icon")
+                        Text("Timer icon")
                             .font(.headline)
                         Spacer()
                         Menu("🍅") {
@@ -55,16 +59,15 @@ struct AddTimerView: View {
                             .background(.red)
                             .foregroundColor(.white)
                             .cornerRadius(5)
-                        Text("Focus Time")
+                        Text("Focus time")
                             .font(.headline)
                         Spacer()
                         
-                        Picker("Time", selection: $focusStart) {
+                        Picker("", selection: $focusStart) {
                             ForEach(1..<61) {
                                 Text("\($0)min").tag($0)
                             }
                         }
-                        .pickerStyle(.menu)
 
                     }
                     .buttonStyle(PlainButtonStyle())
@@ -75,15 +78,14 @@ struct AddTimerView: View {
                             .background(.yellow)
                             .foregroundColor(.white)
                             .cornerRadius(5)
-                        Text("Short Break")
+                        Text("Short break")
                             .font(.headline)
                         Spacer()
-                        Picker("Time", selection: $breakStart) {
+                        Picker("", selection: $breakStart) {
                             ForEach(1..<61) {
                                 Text("\($0)min").tag($0)
                             }
                         }
-                        .pickerStyle(.menu)
                     }
                     .disabled(focusStart == 0)
                     .buttonStyle(PlainButtonStyle())
@@ -94,15 +96,14 @@ struct AddTimerView: View {
                             .background(.blue)
                             .foregroundColor(.white)
                             .cornerRadius(5)
-                        Text("Long Break")
+                        Text("Long break")
                             .font(.headline)
                         Spacer()
-                        Picker("Time", selection: $longBreakStart) {
+                        Picker("", selection: $longBreakStart) {
                             ForEach(1..<61) {
                                 Text("\($0)min").tag($0)
                             }
                         }
-                        .pickerStyle(.menu)
                     }
                     .disabled(focusStart == 0)
                     .buttonStyle(PlainButtonStyle())
@@ -110,14 +111,14 @@ struct AddTimerView: View {
                 
                 Section {
                     HStack{
-                        Text("Auto Continue")
+                        Text("Auto continue")
                             .font(.headline)
                         Spacer()
                         Toggle("", isOn: $tm.isAuto)
                     }
                     
                     HStack{
-                        Text("Skip Long Break")
+                        Text("Skip long break")
                             .font(.headline)
                         Spacer()
                         Toggle("", isOn: $tm.isSkipMode)
@@ -156,7 +157,8 @@ struct AddTimerView: View {
                     
                 }
             }
-        
+            .background(Color("BackgroundColor"))
+           
         .navigationTitle("New Timer")
     }
 }

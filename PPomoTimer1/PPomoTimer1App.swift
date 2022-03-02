@@ -16,6 +16,7 @@ struct PPomoTimer1App: App {
         WindowGroup {
             HomeView()
                 .environmentObject(tm)
+                .preferredColorScheme(.dark)
         }
     }
 }
