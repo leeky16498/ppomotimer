@@ -41,7 +41,7 @@ struct TimerView: View {
                                 case .long:
                                     Text("Long Break Mode 🌕")
                                         .font(.system(size: 30, weight: .bold, design: .rounded))
-                                        .fontWeight(.bold)
+                                        .fontWeight(.bold)//
                     
                                                 }
                                             }
