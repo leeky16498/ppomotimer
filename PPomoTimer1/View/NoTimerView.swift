@@ -10,12 +10,12 @@ import SwiftUI
 struct NoTimerView: View {
     var body: some View {
         VStack {
-            Image(systemName: "leaf.fill")
-                .symbolRenderingMode(.multicolor)
+            Image(systemName: "deskclock")
+                .foregroundColor(.mint)
                 .font(.system(size: 100))
                 .padding()
             Text("Add your timer now!")
-                .font(.title.bold())
+                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .padding(.bottom, 8)
                 .foregroundColor(.white)
             Text("Hey! 😀 Welcome to PPO.MO timer.\n Press ' + ' button and start your journey!")

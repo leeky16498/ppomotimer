@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		793F711E27CC072E006BBA7B /* PPomoTimer1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F711D27CC072E006BBA7B /* PPomoTimer1App.swift */; };
-		793F712027CC072E006BBA7B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F711F27CC072E006BBA7B /* HomeView.swift */; };
+		793F712027CC072E006BBA7B /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F711F27CC072E006BBA7B /* TimerView.swift */; };
 		793F712227CC072F006BBA7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793F712127CC072F006BBA7B /* Assets.xcassets */; };
 		793F712527CC072F006BBA7B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793F712427CC072F006BBA7B /* Preview Assets.xcassets */; };
 		793F712C27CC0756006BBA7B /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F712B27CC0756006BBA7B /* TimerModel.swift */; };
@@ -18,12 +18,15 @@
 		7955B8AB27CCC4A1004E470C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955B8AA27CCC4A1004E470C /* AudioPlayer.swift */; };
 		7955B8AE27CCC89D004E470C /* chimeup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7955B8AD27CCC89D004E470C /* chimeup.mp3 */; };
 		7955B8B227CCD33E004E470C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7955B8B127CCD33E004E470C /* Launch Screen.storyboard */; };
+		7978DC0327E1088D00499843 /* Forest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7978DC0027E1088D00499843 /* Forest.wav */; };
+		7978DC0427E1088D00499843 /* Rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7978DC0127E1088D00499843 /* Rain.wav */; };
+		7978DC0527E1088D00499843 /* RiverStream.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7978DC0227E1088D00499843 /* RiverStream.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		793F711A27CC072E006BBA7B /* PPomoTimer1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPomoTimer1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		793F711D27CC072E006BBA7B /* PPomoTimer1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPomoTimer1App.swift; sourceTree = "<group>"; };
-		793F711F27CC072E006BBA7B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		793F711F27CC072E006BBA7B /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		793F712127CC072F006BBA7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		793F712427CC072F006BBA7B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		793F712B27CC0756006BBA7B /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
@@ -33,6 +36,10 @@
 		7955B8AA27CCC4A1004E470C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		7955B8AD27CCC89D004E470C /* chimeup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = chimeup.mp3; path = ../../../UdemyCourse/Restart/Restart/Sounds/chimeup.mp3; sourceTree = "<group>"; };
 		7955B8B127CCD33E004E470C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7978DBF927E1083000499843 /* chimeup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chimeup.mp3; sourceTree = "<group>"; };
+		7978DC0027E1088D00499843 /* Forest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Forest.wav; path = Sounds/Forest.wav; sourceTree = SOURCE_ROOT; };
+		7978DC0127E1088D00499843 /* Rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Rain.wav; path = Sounds/Rain.wav; sourceTree = SOURCE_ROOT; };
+		7978DC0227E1088D00499843 /* RiverStream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = RiverStream.mp3; path = Sounds/RiverStream.mp3; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,16 +73,15 @@
 		793F711C27CC072E006BBA7B /* PPomoTimer1 */ = {
 			isa = PBXGroup;
 			children = (
-				793F711D27CC072E006BBA7B /* PPomoTimer1App.swift */,
-				793F711F27CC072E006BBA7B /* HomeView.swift */,
-				793F712B27CC0756006BBA7B /* TimerModel.swift */,
+				7978DBF827E1082500499843 /* AudioFiles */,
+				7978DBF727E106FA00499843 /* App */,
+				7978DBF627E106F000499843 /* Utilities */,
+				7978DBF527E106ED00499843 /* Model */,
+				7978DBF427E106E800499843 /* ViewModel */,
+				7978DBF327E106E500499843 /* View */,
 				793F712127CC072F006BBA7B /* Assets.xcassets */,
 				7955B8AD27CCC89D004E470C /* chimeup.mp3 */,
 				793F712327CC072F006BBA7B /* Preview Content */,
-				793F712F27CC0772006BBA7B /* AddTimerView.swift */,
-				793F713127CC077B006BBA7B /* NoTimerView.swift */,
-				793F713327CC0785006BBA7B /* ProgressView.swift */,
-				7955B8AA27CCC4A1004E470C /* AudioPlayer.swift */,
 			);
 			path = PPomoTimer1;
 			sourceTree = "<group>";
@@ -86,6 +92,59 @@
 				793F712427CC072F006BBA7B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7978DBF327E106E500499843 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				793F711F27CC072E006BBA7B /* TimerView.swift */,
+				793F712F27CC0772006BBA7B /* AddTimerView.swift */,
+				793F713127CC077B006BBA7B /* NoTimerView.swift */,
+				793F713327CC0785006BBA7B /* ProgressView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7978DBF427E106E800499843 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				793F712B27CC0756006BBA7B /* TimerModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7978DBF527E106ED00499843 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7978DBF627E106F000499843 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7955B8AA27CCC4A1004E470C /* AudioPlayer.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		7978DBF727E106FA00499843 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				793F711D27CC072E006BBA7B /* PPomoTimer1App.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7978DBF827E1082500499843 /* AudioFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7978DC0027E1088D00499843 /* Forest.wav */,
+				7978DC0127E1088D00499843 /* Rain.wav */,
+				7978DC0227E1088D00499843 /* RiverStream.mp3 */,
+				7978DBF927E1083000499843 /* chimeup.mp3 */,
+			);
+			path = AudioFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +205,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7978DC0527E1088D00499843 /* RiverStream.mp3 in Resources */,
 				7955B8AE27CCC89D004E470C /* chimeup.mp3 in Resources */,
 				793F712527CC072F006BBA7B /* Preview Assets.xcassets in Resources */,
+				7978DC0327E1088D00499843 /* Forest.wav in Resources */,
 				7955B8B227CCD33E004E470C /* Launch Screen.storyboard in Resources */,
+				7978DC0427E1088D00499843 /* Rain.wav in Resources */,
 				793F712227CC072F006BBA7B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,7 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				793F712C27CC0756006BBA7B /* TimerModel.swift in Sources */,
-				793F712027CC072E006BBA7B /* HomeView.swift in Sources */,
+				793F712027CC072E006BBA7B /* TimerView.swift in Sources */,
 				793F713227CC077B006BBA7B /* NoTimerView.swift in Sources */,
 				793F713027CC0772006BBA7B /* AddTimerView.swift in Sources */,
 				793F711E27CC072E006BBA7B /* PPomoTimer1App.swift in Sources */,
@@ -313,7 +375,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -343,7 +405,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

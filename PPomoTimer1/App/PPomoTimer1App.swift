@@ -14,7 +14,7 @@ struct PPomoTimer1App: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            TimerView()
                 .environmentObject(tm)
                 .preferredColorScheme(.dark)
         }

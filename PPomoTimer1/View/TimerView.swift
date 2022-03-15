@@ -8,16 +8,14 @@
 import SwiftUI
 
 
-struct HomeView: View {
+struct TimerView: View {
     
     @EnvironmentObject var tm : TimerModel
-    
     
     @State var timerStyle : TimerStyle?
     @State var focusColors : [Color] = [Color.green, Color.mint, Color.green, Color.mint, Color.green]
     @State var breakColors : [Color] = [Color.blue, Color.mint, Color.blue, Color.mint, Color.blue]
     @State var longBreakColors : [Color] = [Color.gray, Color.white, Color.gray, Color.white, Color.gray]
-    
 
     var body: some View {
         NavigationView {
@@ -27,24 +25,22 @@ struct HomeView: View {
                     NoTimerView()
                 } else {
                     VStack(alignment : .center, spacing: 40){
-                        
                         Spacer()
-                        
                         if let timerStyle = tm.timerStyle {
                             switch timerStyle {
                                 case .focus:
                                     Text("Focus Mode 🔥")
-                                        .font(.title)
+                                        .font(.system(size: 30, weight: .bold, design: .rounded))
                                         .fontWeight(.bold)
                        
                                 case .short:
                                     Text("Break Mode ☕️")
-                                        .font(.title)
+                                        .font(.system(size: 30, weight: .bold, design: .rounded))
                                         .fontWeight(.bold)
                              
                                 case .long:
                                     Text("Long Break Mode 🌕")
-                                        .font(.title)
+                                        .font(.system(size: 30, weight: .bold, design: .rounded))
                                         .fontWeight(.bold)
                     
                                                 }
@@ -191,7 +187,9 @@ struct HomeView: View {
                         case .normal:
                             tm.timerMode = .start
                             tm.isStarted.toggle()
+                            tm.backBroundMusic()
                         case .start:
+                            
                             tm.timerMode = .normal
                             
                             if let timerStyle = tm.timerStyle {
@@ -306,6 +304,38 @@ struct HomeView: View {
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarItems(trailing:
                        HStack{
+                        
+                        if tm.isOnBackgroundSound {
+                            Menu {
+                                Button(action: {
+                                    tm.backgroundNoise = .forest
+                                }, label: {
+                                    Label(tm.backgroundNoise == .forest ? "✅ Forest" : "Forest", systemImage: "leaf")
+                                })
+                                
+                                Button(action: {
+                                    tm.backgroundNoise = .river
+                                }, label: {
+                                    Label(tm.backgroundNoise == .river ? "✅ River" : "River", systemImage: "drop.circle")
+                                })
+                                
+                                Button(action: {
+                                    tm.backgroundNoise = .rain
+                                }, label: {
+                                    Label(tm.backgroundNoise == .rain ? "✅ Rain" : "Rain", systemImage: "cloud.rain")
+                                })
+                                
+                                Button(action: {
+                                    tm.backgroundNoise = .turnOff
+                                }, label: {
+                                    Label(tm.backgroundNoise == .turnOff ? "✅ Turn ff" : "Turn off", systemImage: "speaker.slash")
+                                })
+                                
+                            } label: {
+                                Image(systemName: "speaker.circle")
+                            }
+                        }
+                        
                         NavigationLink(destination: {
                             AddTimerView()
                         }, label: {
@@ -316,7 +346,7 @@ struct HomeView: View {
     }
 }
 
-extension HomeView {
+extension TimerView {
     
     func formatTime() -> String {
         

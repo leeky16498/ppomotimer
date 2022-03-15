@@ -23,6 +23,8 @@ class TimerModel : ObservableObject {
     @Published var elapsedLongBreakTime : Int = 0
     @Published var totalLongBreakTime : Int = 0
     @Published var isOnSound : Bool = false
+    @Published var isOnBackgroundSound : Bool = false
+    @Published var backgroundNoise : BackgroundNoise? = nil
     
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -44,6 +46,26 @@ class TimerModel : ObservableObject {
             }
         }
     }
+    
+    func backBroundMusic() {
+        
+        guard let backgroundNoise = backgroundNoise else {
+            return
+        }
+        
+        switch backgroundNoise {
+        case .forest:
+            playBackgroundSound(sound: "Forest", type: "wav")
+        case .river:
+            playBackgroundSound(sound: "Forest", type: "wav")
+        case .rain:
+            playBackgroundSound(sound: "Forest", type: "wav")
+        case .turnOff:
+            break
+        }
+    }
+    
+    
 }
 
 enum TimerMode {
@@ -54,3 +76,6 @@ enum TimerStyle {
     case focus, short, long
 }
 
+enum BackgroundNoise {
+    case forest, river, rain, turnOff
+}

@@ -27,32 +27,7 @@ struct AddTimerView: View {
     
     var body: some View {
             Form {
-                Section {
-                    HStack{
-                        Image(systemName: "timer")
-                            .frame(width : 30, height : 30)
-                            .background(.green)
-                            .foregroundColor(.white)
-                            .cornerRadius(5)
-                        Text("Timer icon")
-                            .font(.headline)
-                        Spacer()
-                        Menu("🍅") {
-                            Button(action: {
-                                
-                            }, label: {
-                                Text("🍅")
-                                    .frame(width : 30, height : 30)
-                                    .background(.gray.opacity(0.4))
-                                    .foregroundColor(.white)
-                                    .cornerRadius(5)
-                            })
-                        }
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                }
-                
-                Section{
+                Section(header: Text("Setting time")){
                     HStack{
                         Image(systemName: "target")
                             .frame(width : 30, height : 30)
@@ -109,26 +84,33 @@ struct AddTimerView: View {
                     .buttonStyle(PlainButtonStyle())
                 }
                 
-                Section {
+                Section(header: Text("Setting background")) {
                     HStack{
-                        Text("Auto continue")
+                        Text("🔹 Auto continue")
                             .font(.headline)
                         Spacer()
                         Toggle("", isOn: $tm.isAuto)
                     }
                     
                     HStack{
-                        Text("Skip long break")
+                        Text("🔹 Skip long break")
                             .font(.headline)
                         Spacer()
                         Toggle("", isOn: $tm.isSkipMode)
                     }
                     
                     HStack{
-                        Text("Turn on sound")
+                        Text("🔹 Turn on sound")
                             .font(.headline)
                         Spacer()
                         Toggle("", isOn: $tm.isOnSound)
+                    }
+                    
+                    HStack{
+                        Text("🔹 B.G Noise")
+                            .font(.headline)
+                        
+                        Toggle("", isOn: $tm.isOnBackgroundSound)
                     }
                 }
                 
@@ -160,6 +142,7 @@ struct AddTimerView: View {
             .background(Color("BackgroundColor"))
            
         .navigationTitle("New Timer")
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 
