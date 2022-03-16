@@ -49,20 +49,25 @@ class TimerModel : ObservableObject {
     
     func backBroundMusic() {
         
-        guard let backgroundNoise = backgroundNoise else {
-            return
-        }
+        if self.isOnBackgroundSound {
         
-        switch backgroundNoise {
-        case .forest:
-            playBackgroundSound(sound: "Forest", type: "wav")
-        case .river:
-            playBackgroundSound(sound: "RiverStream", type: "mp3")
-        case .rain:
-            playBackgroundSound(sound: "Rain", type: "wav")
-        case .wave:
-            playBackgroundSound(sound: "HarborWave", type: "wav")
-        case .turnOff:
+            guard let backgroundNoise = backgroundNoise else {
+                return
+            }
+        
+            switch backgroundNoise {
+            case .forest:
+                playBackgroundSound(sound: "Forest", type: "wav")
+            case .river:
+                playBackgroundSound(sound: "RiverStream", type: "mp3")
+            case .rain:
+                playBackgroundSound(sound: "Rain", type: "wav")
+            case .wave:
+                playBackgroundSound(sound: "HarborWave", type: "wav")
+            case .turnOff:
+                audioPlayer1?.stop()
+            }
+        } else {
             audioPlayer1?.stop()
         }
     }
