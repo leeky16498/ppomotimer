@@ -18,9 +18,6 @@ struct AddTimerView: View {
     
     @EnvironmentObject var tm : TimerModel
     
-    @State var isAuto : Bool = false
-    @State var isTimePicker : Bool = false
-    
     init(){
         UITableView.appearance().backgroundColor = .clear
     }
@@ -29,7 +26,7 @@ struct AddTimerView: View {
             Form {
                 Section(header: Text("Setting time")){
                     HStack{
-                        Image(systemName: "target")
+                        Image(systemName: "flame.fill")
                             .frame(width : 30, height : 30)
                             .background(.red)
                             .foregroundColor(.white)
@@ -45,7 +42,7 @@ struct AddTimerView: View {
                         }
 
                     }
-                    .buttonStyle(PlainButtonStyle())
+                    .buttonStyle(.plain)
                     
                     HStack{
                         Image(systemName: "sun.max.fill")
@@ -86,28 +83,28 @@ struct AddTimerView: View {
                 
                 Section(header: Text("Setting background")) {
                     HStack{
-                        Text("🔹 Auto continue")
+                        Text("⚽️ Auto continue")
                             .font(.headline)
                         Spacer()
                         Toggle("", isOn: $tm.isAuto)
                     }
                     
                     HStack{
-                        Text("🔹 Skip long break")
+                        Text("🏀 Skip long break")
                             .font(.headline)
                         Spacer()
                         Toggle("", isOn: $tm.isSkipMode)
                     }
                     
                     HStack{
-                        Text("🔹 Turn on sound")
+                        Text("🏈 Turn on sound")
                             .font(.headline)
                         Spacer()
                         Toggle("", isOn: $tm.isOnSound)
                     }
                     
                     HStack{
-                        Text("🔹 B.G Noise")
+                        Text("🥎 B.G Noise")
                             .font(.headline)
                         
                         Toggle("", isOn: $tm.isOnBackgroundSound)
@@ -129,6 +126,7 @@ struct AddTimerView: View {
                         tm.isStarted = false
                         tm.progress = 0
                         tm.elapsedShortTime = tm.totalShortTime
+                        tm.backgroundNoise = .turnOff
                         
                         if tm.isOnSound {
                             playSound(sound: "chimeup", type: "mp3")

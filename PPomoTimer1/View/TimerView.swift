@@ -16,6 +16,7 @@ struct TimerView: View {
     @State var focusColors : [Color] = [Color.green, Color.mint, Color.green, Color.mint, Color.green]
     @State var breakColors : [Color] = [Color.blue, Color.mint, Color.blue, Color.mint, Color.blue]
     @State var longBreakColors : [Color] = [Color.gray, Color.white, Color.gray, Color.white, Color.gray]
+    @State var isShowNewTimerView : Bool = false
 
     var body: some View {
         NavigationView {
@@ -69,6 +70,7 @@ struct TimerView: View {
                                                     tm.isStarted = false
                                                     tm.progress = 0
                                                     tm.elapsedShortTime = tm.totalShortTime
+                                                    audioPlayer1?.stop()
                                                     
                                                     if tm.isOnSound {
                                                         playSound(sound: "chimeup", type: "mp3")
@@ -111,16 +113,19 @@ struct TimerView: View {
                                                         tm.isStarted = false
                                                         tm.progress = 0
                                                         tm.elapsedFocusTime = tm.totalFocusTime
+                                                        audioPlayer1?.stop()
                                                         
                                                         if tm.isOnSound {
                                                             playSound(sound: "chimeup", type: "mp3")
                                                         }
+                                                        
                                                     } else {
                                                         tm.timerMode = .normal
                                                         tm.timerStyle = .long
                                                         tm.isStarted = false
                                                         tm.progress = 0
                                                         tm.elapsedLongBreakTime = tm.totalLongBreakTime
+                                                        audioPlayer1?.stop()
                                                         
                                                         if tm.isOnSound {
                                                             playSound(sound: "chimeup", type: "mp3")
@@ -146,12 +151,14 @@ struct TimerView: View {
                                                     if tm.isOnSound {
                                                         playSound(sound: "chimeup", type: "mp3")
                                                     }
+                                                    
                                                 } else {
                                                     tm.timerMode = .normal
                                                     tm.timerStyle = .focus
                                                     tm.isStarted = false
                                                     tm.progress = 0
                                                     tm.elapsedFocusTime = tm.totalFocusTime
+                                                    audioPlayer1?.stop()
                                                     
                                                     if tm.isOnSound {
                                                         playSound(sound: "chimeup", type: "mp3")
@@ -184,12 +191,14 @@ struct TimerView: View {
                     
                     Button(action: {
                         switch tm.timerMode {
+                            
                         case .normal:
                             tm.timerMode = .start
                             tm.isStarted.toggle()
                             tm.backBroundMusic()
-                        case .start:
                             
+                        case .start:
+                            audioPlayer1?.stop()
                             tm.timerMode = .normal
                             
                             if let timerStyle = tm.timerStyle {
@@ -207,10 +216,31 @@ struct TimerView: View {
                                     tm.elapsedLongBreakTime = tm.totalLongBreakTime
                                 }
                             }
+                            
                             tm.isStarted.toggle()
+                            
                         case .pause:
-                            tm.timerMode = .normal
+        
                             tm.isStarted.toggle()
+                            tm.isPaused.toggle()
+                            tm.timerMode = .normal
+                            
+                            if let timerStyle = tm.timerStyle {
+                                switch timerStyle {
+                                case .focus:
+                                    tm.progress = 0
+                                    tm.elapsedFocusTime = tm.totalFocusTime
+                                    
+                                case .short:
+                                    tm.progress = 0
+                                    tm.elapsedShortTime = tm.totalShortTime
+                                   
+                                case .long:
+                                    tm.progress = 0
+                                    tm.elapsedLongBreakTime = tm.totalLongBreakTime
+                                }
+                            }
+                            
                         case .stop:
                             tm.timerMode = .normal
                         }
@@ -231,9 +261,11 @@ struct TimerView: View {
                         case .normal:
                             return
                         case .start:
+                            audioPlayer1?.stop()
                             tm.timerMode = .pause
                             tm.isPaused.toggle()
                         case .pause:
+                            tm.backBroundMusic()
                             tm.timerMode = .start
                             tm.isPaused.toggle()
                         case .stop:
@@ -252,6 +284,9 @@ struct TimerView: View {
                     .padding()
                         
                     Button(action:  {
+                        
+                        audioPlayer1?.stop()
+                        
                         if let timerStyle = tm.timerStyle {
                             switch timerStyle {
                             case .focus:
@@ -295,11 +330,14 @@ struct TimerView: View {
                     .padding()
                         
                     } // hst
-                    
                     Spacer()
                 }//vst
             }
         }//Zstack
+            .onDisappear {
+                tm.timerMode = .pause
+                audioPlayer1?.stop()
+            }
                     .navigationTitle("PPO.MO ⏱")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarItems(trailing:
@@ -308,31 +346,79 @@ struct TimerView: View {
                         if tm.isOnBackgroundSound {
                             Menu {
                                 Button(action: {
-                                    tm.backgroundNoise = .forest
+                                    switch tm.timerMode {
+                                    case .normal:
+                                        tm.backgroundNoise = .forest
+                                    case .start:
+                                        tm.backgroundNoise = .forest
+                                        tm.backBroundMusic()
+                                    case .pause:
+                                        audioPlayer1?.stop()
+                                    case .stop:
+                                        tm.backgroundNoise = .forest
+                                    }
+                                    
                                 }, label: {
                                     Label(tm.backgroundNoise == .forest ? "✅ Forest" : "Forest", systemImage: "leaf")
                                 })
                                 
                                 Button(action: {
-                                    tm.backgroundNoise = .river
+                                    switch tm.timerMode {
+                                    case .normal:
+                                        tm.backgroundNoise = .river
+                                    case .start:
+                                        tm.backgroundNoise = .river
+                                        tm.backBroundMusic()
+                                    case .pause:
+                                        audioPlayer1?.stop()
+                                    case .stop:
+                                        tm.backgroundNoise = .river
+                                    }
                                 }, label: {
                                     Label(tm.backgroundNoise == .river ? "✅ River" : "River", systemImage: "drop.circle")
                                 })
                                 
                                 Button(action: {
-                                    tm.backgroundNoise = .rain
+                                    switch tm.timerMode {
+                                    case .normal:
+                                        tm.backgroundNoise = .rain
+                                    case .start:
+                                        tm.backgroundNoise = .rain
+                                        tm.backBroundMusic()
+                                    case .pause:
+                                        audioPlayer1?.stop()
+                                    case .stop:
+                                        tm.backgroundNoise = .rain
+                                    }
                                 }, label: {
                                     Label(tm.backgroundNoise == .rain ? "✅ Rain" : "Rain", systemImage: "cloud.rain")
                                 })
                                 
                                 Button(action: {
-                                    tm.backgroundNoise = .turnOff
+                                    switch tm.timerMode {
+                                    case .normal:
+                                        tm.backgroundNoise = .wave
+                                    case .start:
+                                        tm.backgroundNoise = .wave
+                                        tm.backBroundMusic()
+                                    case .pause:
+                                        audioPlayer1?.stop()
+                                    case .stop:
+                                        tm.backgroundNoise = .wave
+                                    }
                                 }, label: {
-                                    Label(tm.backgroundNoise == .turnOff ? "✅ Turn ff" : "Turn off", systemImage: "speaker.slash")
+                                    Label(tm.backgroundNoise == .wave ? "✅ Wave" : "Wave", systemImage: "cloud.rain")
+                                })
+                                
+                                Button(action: {
+                                    tm.backgroundNoise = .turnOff
+                                    audioPlayer1?.stop()
+                                }, label: {
+                                    Label(tm.backgroundNoise == .turnOff ? "✅ Turn off" : "Turn off", systemImage: "speaker.slash")
                                 })
                                 
                             } label: {
-                                Image(systemName: "speaker.circle")
+                                Image(systemName: tm.backgroundNoise == .turnOff ? "speaker.slash.circle" : "speaker.circle")
                             }
                         }
                         

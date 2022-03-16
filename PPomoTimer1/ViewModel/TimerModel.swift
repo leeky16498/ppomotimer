@@ -57,11 +57,13 @@ class TimerModel : ObservableObject {
         case .forest:
             playBackgroundSound(sound: "Forest", type: "wav")
         case .river:
-            playBackgroundSound(sound: "Forest", type: "wav")
+            playBackgroundSound(sound: "RiverStream", type: "mp3")
         case .rain:
-            playBackgroundSound(sound: "Forest", type: "wav")
+            playBackgroundSound(sound: "Rain", type: "wav")
+        case .wave:
+            playBackgroundSound(sound: "HarborWave", type: "wav")
         case .turnOff:
-            break
+            audioPlayer1?.stop()
         }
     }
     
@@ -77,5 +79,5 @@ enum TimerStyle {
 }
 
 enum BackgroundNoise {
-    case forest, river, rain, turnOff
+    case forest, river, rain, wave, turnOff
 }

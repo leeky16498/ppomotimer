@@ -15,12 +15,17 @@
 		793F713027CC0772006BBA7B /* AddTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F712F27CC0772006BBA7B /* AddTimerView.swift */; };
 		793F713227CC077B006BBA7B /* NoTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F713127CC077B006BBA7B /* NoTimerView.swift */; };
 		793F713427CC0785006BBA7B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F713327CC0785006BBA7B /* ProgressView.swift */; };
+		794367E827E1671F00F2C50A /* HarborWave.wav in Resources */ = {isa = PBXBuildFile; fileRef = 794367E727E1671F00F2C50A /* HarborWave.wav */; };
+		794367EA27E1672500F2C50A /* HarborWave.wav in Resources */ = {isa = PBXBuildFile; fileRef = 794367E927E1672500F2C50A /* HarborWave.wav */; };
 		7955B8AB27CCC4A1004E470C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7955B8AA27CCC4A1004E470C /* AudioPlayer.swift */; };
 		7955B8AE27CCC89D004E470C /* chimeup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7955B8AD27CCC89D004E470C /* chimeup.mp3 */; };
 		7955B8B227CCD33E004E470C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7955B8B127CCD33E004E470C /* Launch Screen.storyboard */; };
-		7978DC0327E1088D00499843 /* Forest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7978DC0027E1088D00499843 /* Forest.wav */; };
-		7978DC0427E1088D00499843 /* Rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7978DC0127E1088D00499843 /* Rain.wav */; };
-		7978DC0527E1088D00499843 /* RiverStream.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7978DC0227E1088D00499843 /* RiverStream.mp3 */; };
+		7978DC0A27E12CD100499843 /* RiverStream.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7978DC0727E12CD100499843 /* RiverStream.mp3 */; };
+		7978DC0B27E12CD100499843 /* Forest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7978DC0827E12CD100499843 /* Forest.wav */; };
+		7978DC0C27E12CD100499843 /* Rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7978DC0927E12CD100499843 /* Rain.wav */; };
+		7978DC1027E12CD500499843 /* Forest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7978DC0D27E12CD500499843 /* Forest.wav */; };
+		7978DC1127E12CD500499843 /* Rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7978DC0E27E12CD500499843 /* Rain.wav */; };
+		7978DC1227E12CD500499843 /* RiverStream.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7978DC0F27E12CD500499843 /* RiverStream.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,13 +38,18 @@
 		793F712F27CC0772006BBA7B /* AddTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimerView.swift; sourceTree = "<group>"; };
 		793F713127CC077B006BBA7B /* NoTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTimerView.swift; sourceTree = "<group>"; };
 		793F713327CC0785006BBA7B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		794367E727E1671F00F2C50A /* HarborWave.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = HarborWave.wav; path = Sounds/HarborWave.wav; sourceTree = SOURCE_ROOT; };
+		794367E927E1672500F2C50A /* HarborWave.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = HarborWave.wav; path = Sounds/HarborWave.wav; sourceTree = SOURCE_ROOT; };
 		7955B8AA27CCC4A1004E470C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		7955B8AD27CCC89D004E470C /* chimeup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = chimeup.mp3; path = ../../../UdemyCourse/Restart/Restart/Sounds/chimeup.mp3; sourceTree = "<group>"; };
 		7955B8B127CCD33E004E470C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7978DBF927E1083000499843 /* chimeup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chimeup.mp3; sourceTree = "<group>"; };
-		7978DC0027E1088D00499843 /* Forest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Forest.wav; path = Sounds/Forest.wav; sourceTree = SOURCE_ROOT; };
-		7978DC0127E1088D00499843 /* Rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Rain.wav; path = Sounds/Rain.wav; sourceTree = SOURCE_ROOT; };
-		7978DC0227E1088D00499843 /* RiverStream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = RiverStream.mp3; path = Sounds/RiverStream.mp3; sourceTree = SOURCE_ROOT; };
+		7978DC0727E12CD100499843 /* RiverStream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = RiverStream.mp3; path = Sounds/RiverStream.mp3; sourceTree = SOURCE_ROOT; };
+		7978DC0827E12CD100499843 /* Forest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Forest.wav; path = Sounds/Forest.wav; sourceTree = SOURCE_ROOT; };
+		7978DC0927E12CD100499843 /* Rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Rain.wav; path = Sounds/Rain.wav; sourceTree = SOURCE_ROOT; };
+		7978DC0D27E12CD500499843 /* Forest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Forest.wav; path = Sounds/Forest.wav; sourceTree = SOURCE_ROOT; };
+		7978DC0E27E12CD500499843 /* Rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Rain.wav; path = Sounds/Rain.wav; sourceTree = SOURCE_ROOT; };
+		7978DC0F27E12CD500499843 /* RiverStream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = RiverStream.mp3; path = Sounds/RiverStream.mp3; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,10 @@
 				7978DBF327E106E500499843 /* View */,
 				793F712127CC072F006BBA7B /* Assets.xcassets */,
 				7955B8AD27CCC89D004E470C /* chimeup.mp3 */,
+				7978DC0827E12CD100499843 /* Forest.wav */,
+				7978DC0927E12CD100499843 /* Rain.wav */,
+				794367E727E1671F00F2C50A /* HarborWave.wav */,
+				7978DC0727E12CD100499843 /* RiverStream.mp3 */,
 				793F712327CC072F006BBA7B /* Preview Content */,
 			);
 			path = PPomoTimer1;
@@ -139,10 +153,11 @@
 		7978DBF827E1082500499843 /* AudioFiles */ = {
 			isa = PBXGroup;
 			children = (
-				7978DC0027E1088D00499843 /* Forest.wav */,
-				7978DC0127E1088D00499843 /* Rain.wav */,
-				7978DC0227E1088D00499843 /* RiverStream.mp3 */,
 				7978DBF927E1083000499843 /* chimeup.mp3 */,
+				7978DC0D27E12CD500499843 /* Forest.wav */,
+				794367E927E1672500F2C50A /* HarborWave.wav */,
+				7978DC0E27E12CD500499843 /* Rain.wav */,
+				7978DC0F27E12CD500499843 /* RiverStream.mp3 */,
 			);
 			path = AudioFiles;
 			sourceTree = "<group>";
@@ -205,13 +220,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7978DC0527E1088D00499843 /* RiverStream.mp3 in Resources */,
 				7955B8AE27CCC89D004E470C /* chimeup.mp3 in Resources */,
+				7978DC1027E12CD500499843 /* Forest.wav in Resources */,
+				7978DC0C27E12CD100499843 /* Rain.wav in Resources */,
 				793F712527CC072F006BBA7B /* Preview Assets.xcassets in Resources */,
-				7978DC0327E1088D00499843 /* Forest.wav in Resources */,
+				7978DC1127E12CD500499843 /* Rain.wav in Resources */,
 				7955B8B227CCD33E004E470C /* Launch Screen.storyboard in Resources */,
-				7978DC0427E1088D00499843 /* Rain.wav in Resources */,
+				794367E827E1671F00F2C50A /* HarborWave.wav in Resources */,
+				7978DC0B27E12CD100499843 /* Forest.wav in Resources */,
 				793F712227CC072F006BBA7B /* Assets.xcassets in Resources */,
+				7978DC0A27E12CD100499843 /* RiverStream.mp3 in Resources */,
+				7978DC1227E12CD500499843 /* RiverStream.mp3 in Resources */,
+				794367EA27E1672500F2C50A /* HarborWave.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +384,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -372,7 +393,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = leeky16498Dev.PPomoTimer1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PPomoTimer1;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -394,6 +415,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -402,7 +424,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = leeky16498Dev.PPomoTimer1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PPomoTimer1;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
