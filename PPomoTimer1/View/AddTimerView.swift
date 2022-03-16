@@ -126,7 +126,10 @@ struct AddTimerView: View {
                         tm.isStarted = false
                         tm.progress = 0
                         tm.elapsedShortTime = tm.totalShortTime
-                        tm.backgroundNoise = .turnOff
+                        
+                        if tm.isOnBackgroundSound {
+                            tm.backgroundNoise = .forest
+                        }
                         
                         if tm.isOnSound {
                             playSound(sound: "chimeup", type: "mp3")

@@ -43,9 +43,9 @@ struct TimerView: View {
                                     Text("Long Break Mode 🌕")
                                         .font(.system(size: 30, weight: .bold, design: .rounded))
                                         .fontWeight(.bold)//
-                    
-                                                }
-                                            }
+                                    }
+                                }
+                        
                     if let timerStyle = tm.timerStyle {
                             switch timerStyle {
                             case .focus:
@@ -272,7 +272,8 @@ struct TimerView: View {
                             return
                         }
                     }, label: {
-                        Image(systemName: tm.isPaused ? "play.fill" : "pause.fill")
+                        Image(systemName: tm.timerMode == .pause
+                              ? "play.fill" : "pause.fill")
                             .frame(width : 60, height : 60)
                             .background(tm.timerMode == .normal ? .gray : .yellow)
                             .foregroundColor(.white)
@@ -334,10 +335,6 @@ struct TimerView: View {
                 }//vst
             }
         }//Zstack
-            .onDisappear {
-                tm.timerMode = .pause
-                audioPlayer1?.stop()
-            }
                     .navigationTitle("PPO.MO ⏱")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarItems(trailing:
@@ -427,6 +424,10 @@ struct TimerView: View {
                         }, label: {
                             Image(systemName: "plus")
                         })
+                        .simultaneousGesture(TapGesture().onEnded({
+                            tm.timerMode = .pause
+                            audioPlayer1?.stop()
+                        }))
                     })
         }//nav
     }
